@@ -6,7 +6,6 @@ const {authenticate}=require("./middlewares/authenticate.middleware")
 require('dotenv').config()
 var cors = require('cors')
 
-
 const app=express();
 app.use(cors({
     origin:"*"
@@ -19,9 +18,6 @@ app.use("/posts",postroutes)
 app.get("/",(req,res)=>{
     res.send("Hello")
 })
-
-
-
 app.listen(process.env.port,async()=>{
     try {
         await connection
